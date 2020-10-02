@@ -50,7 +50,9 @@ const float length_c = 27.5;
 const float length_side = 71;
 const float z_absolute = -28;
 /* Constants for movement ----------------------------------------------------*/
-const float z_default = -50, z_up = -30, z_boot = z_absolute;
+const float z_default = -50,
+z_up = -30,
+z_boot = z_absolute;
 const float x_default = 62, x_offset = 0;
 const float y_start = 0, y_step = 40;
 const float y_default = x_default;
@@ -112,7 +114,6 @@ void setup()
   pwm.begin();
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
   SCmd.addCommand("w", action_cmd);
-
   SCmd.setDefaultHandler(unrecognized);
 
     ts.add(0, 1000, [&](void *) { servo_service(); }, nullptr, false);
